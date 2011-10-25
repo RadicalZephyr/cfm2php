@@ -1,0 +1,24 @@
+cfm2php
+
+This converter will get you about 60% there on simple ColdFusion
+sites.  It was created to help with translating a web app that was
+pretty much entirely simple database query results interpolated into
+HTML, so that's the only thing that it's likely to be useful for.
+
+It's a perl script, so no install (unless you live in a cave and don't
+have perl), just chmod u+x cfm2php.perl and you're good to go.
+
+SYNOPSIS
+        cfm2php [OPTION]... FILE...
+
+DESCRIPTION
+        cfm2php does a search and replace on all named input FILEs
+        with a .cfm extension, and output's the changed context in
+        file of the same base name with a .php extension.
+
+OPTIONS
+
+         --out-prefix=PREFIX
+               Prepend the output filename's with PREFIX.  Literal text
+               concatenation, so relative or absolute path's, as well as
+               simple name prefixes should all work.

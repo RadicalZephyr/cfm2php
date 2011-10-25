@@ -52,7 +52,7 @@ foreach (@ARGV) {
         open $outfile, '>', $outprefix . $_;
 
         $_ = <$infile>;
-        
+
         s/#application\.dsn#//gi;
 
         s#<cfif (.*?)>#if ($1) {#gi;
@@ -88,13 +88,6 @@ foreach (@ARGV) {
 
         s/\.cfm/.php/gi;
 
-        s|Author: Christine Kelley|Author: Geoff Shannon|;
-        s|Date: 12/01|Date: 10/11|;
-        s|Version: 1.0|Version: 2.0|;
-        s|© 2001 Christine M Kelley|© 2011 Geoff Shannon|;
-
-        $_ = '<?php require("/home/geoff/phplay/htdocs/admin/verify.php"); ?>' . "\n" . $_;
-        
         print $outfile $_;
     }
 }
